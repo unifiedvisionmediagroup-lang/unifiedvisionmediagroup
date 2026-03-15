@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unified Vision Media Group</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#2f2f2f;
+color:white;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+border-radius:20px;
+overflow:hidden;
+margin-bottom:40px;
+}
+
+.hero img{
+width:100%;
+display:block;
+object-fit:cover;
+}
+
+.section{
+margin-bottom:50px;
+}
+
+.card{
+background:#1d1f23;
+border-radius:20px;
+padding:30px;
+display:flex;
+gap:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.app-icon{
+width:140px;
+height:140px;
+border-radius:28px;
+}
+
+.app-info{
+flex:1;
+min-width:250px;
+}
+
+h1,h2,h3{
+margin-top:0
+}
+
+.platforms{
+margin-top:15px;
+font-weight:bold;
+opacity:.9
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:#1d1f23;
+padding:20px;
+border-radius:16px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.6;
+}
+
+/* MOBILE FIXES */
+
+@media(max-width:700px){
+
+.card{
+flex-direction:column;
+text-align:center;
+}
+
+.app-icon{
+width:120px;
+height:120px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+<img src="banner.png" alt="Unified Vision Media Group Banner">
+</div>
+
+<div class="section">
+
+<div class="card">
+
+<img src="fundra-icon.png" class="app-icon" alt="Fundra App Icon">
+
+<div class="app-info">
+
+<h2>Fundra</h2>
+
+<p>
+Fundra is a modern personal finance platform designed to make budgeting, saving, and tracking money simple and intuitive. The app helps users stay organized, monitor spending habits, and build stronger financial habits with clear insights and smart automation.
+</p>
+
+<div class="platforms">
+Available on  iOS • 🤖 Android •  macOS • 🌐 Web
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>About Unified Vision Media Group</h2>
+
+<p>
+Unified Vision Media Group develops modern digital products and applications with a focus on clean design, usability, and powerful functionality. The goal is to create tools that simplify everyday tasks while maintaining a professional, polished user experience across mobile and web platforms.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>What We Build</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Mobile First Apps</h3>
+<p>Every product is designed to look great and function smoothly on phones, tablets, and desktops.</p>
+</div>
+
+<div class="feature">
+<h3>Clean Interfaces</h3>
+<p>Modern layouts and simple navigation ensure users can focus on what matters without clutter.</p>
+</div>
+
+<div class="feature">
+<h3>Scalable Platforms</h3>
+<p>Products are built with growth in mind, allowing features and services to expand over time.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© <script>document.write(new Date().getFullYear())</script> Unified Vision Media Group
+</footer>
+
+</div>
+
+</body>
+</html>
