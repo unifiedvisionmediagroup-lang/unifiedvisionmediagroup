@@ -35,7 +35,7 @@ object-fit:cover;
 }
 
 .section{
-margin-bottom:50px;
+margin-bottom:60px;
 }
 
 .card{
@@ -66,7 +66,15 @@ margin-top:0
 .platforms{
 margin-top:15px;
 font-weight:bold;
-opacity:.9
+opacity:.9;
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.platforms img{
+height:22px;
 }
 
 .features{
@@ -77,8 +85,34 @@ gap:20px;
 
 .feature{
 background:#1d1f23;
-padding:20px;
+padding:25px;
 border-radius:16px;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.project{
+background:#1d1f23;
+padding:25px;
+border-radius:16px;
+}
+
+.project img{
+width:80px;
+border-radius:16px;
+margin-bottom:15px;
+}
+
+.contact-box{
+background:#1d1f23;
+padding:25px;
+border-radius:16px;
+font-size:18px;
 }
 
 footer{
@@ -87,7 +121,7 @@ padding:30px;
 opacity:.6;
 }
 
-/* MOBILE FIXES */
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -114,6 +148,8 @@ height:120px;
 <img src="banner.png" alt="Unified Vision Media Group Banner">
 </div>
 
+<!-- FUNDRA -->
+
 <div class="section">
 
 <div class="card">
@@ -129,7 +165,11 @@ Fundra is a modern personal finance platform designed to make budgeting, saving,
 </p>
 
 <div class="platforms">
-Available on  iOS • 🤖 Android •  macOS • 🌐 Web
+<span>Available on</span>
+<img src="ios-logo.png" alt="iOS"> iOS
+<img src="android-logo.png" alt="Android"> Android
+<img src="apple-logo.png" alt="macOS"> macOS
+<img src="web-logo.png" alt="Web"> Web
 </div>
 
 </div>
@@ -137,16 +177,20 @@ Available on  iOS • 🤖 Android •  macOS • 🌐 Web
 </div>
 
 </div>
+
+<!-- ABOUT -->
 
 <div class="section">
 
 <h2>About Unified Vision Media Group</h2>
 
 <p>
-Unified Vision Media Group develops modern digital products and applications with a focus on clean design, usability, and powerful functionality. The goal is to create tools that simplify everyday tasks while maintaining a professional, polished user experience across mobile and web platforms.
+Unified Vision Media Group develops modern digital products and applications with a focus on clean design, usability, and powerful functionality. Our mission is to build tools that simplify everyday tasks while maintaining a professional, polished user experience across mobile and web platforms.
 </p>
 
 </div>
+
+<!-- WHAT WE BUILD -->
 
 <div class="section">
 
@@ -169,6 +213,50 @@ Unified Vision Media Group develops modern digital products and applications wit
 <p>Products are built with growth in mind, allowing features and services to expand over time.</p>
 </div>
 
+</div>
+
+</div>
+
+<!-- FUTURE PROJECTS -->
+
+<div class="section">
+
+<h2>Future Projects</h2>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="fundra-pro-icon.png" alt="Fundra Pro">
+<h3>Fundra Pro</h3>
+<p>
+Fundra Pro will extend the Fundra platform with Plaid integration allowing users to securely link their bank accounts and track savings goals in real time.
+</p>
+<p>
+Future plans also include collaborative savings features where friends or family can work together toward a shared financial goal.
+</p>
+</div>
+
+<div class="project">
+<img src="Snapolytics-icon.png" alt="Snapolytics">
+<h3>Snapolytics</h3>
+<p>
+Snapolytics is an analytics tool designed to take screenshots and automatically extract useful data. The app will convert visual information into structured reports and dashboards using intelligent data logic.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section">
+
+<h2>Contact</h2>
+
+<div class="contact-box">
+For support, partnerships, or business inquiries contact:<br><br>
+<strong>support@unifiedvisionmediagroup.com</strong>
 </div>
 
 </div>
