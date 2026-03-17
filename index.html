@@ -1,340 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Vision Apps</title>
-<meta name="description" content="Unified Vision Apps is the software division of Unified Vision Media Group, featuring Fundra and upcoming apps including Fundra Pro and Snapolytics.">
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#2f2f2f;
-  color:#fff;
-}
-.container{
-  max-width:1180px;
-  margin:auto;
-  padding:20px;
-}
-.nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(20,22,26,.92);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.nav-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-.brand{
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  font-size:20px;
-}
-.nav-links{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-.nav-links a{
-  color:#d8dde6;
-  text-decoration:none;
-  font-weight:600;
-  font-size:15px;
-}
-.nav-links a:hover{color:#fff}
-.hero{
-  border-radius:22px;
-  overflow:hidden;
-  margin:24px 0 26px;
-  box-shadow:0 10px 30px rgba(0,0,0,.22);
-}
-.hero img{
-  width:100%;
-  display:block;
-}
-.intro{
-  text-align:center;
-  margin-bottom:44px;
-}
-.intro h1{
-  margin:0 0 12px;
-  font-size:46px;
-  line-height:1.05;
-}
-.intro p{
-  max-width:900px;
-  margin:0 auto 22px;
-  color:#d1d6de;
-  font-size:20px;
-  line-height:1.55;
-}
-.cta-row{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-.button{
-  display:inline-block;
-  padding:14px 22px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:700;
-}
-.button-primary{
-  background:#4ea1ff;
-  color:#06111f;
-}
-.button-secondary{
-  background:#1d1f23;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.12);
-}
-.section{
-  margin-bottom:66px;
-}
-.section-header{
-  margin-bottom:18px;
-}
-.section-header h2{
-  margin:0 0 10px;
-  font-size:42px;
-}
-.section-header p{
-  margin:0;
-  color:#d1d6de;
-  font-size:18px;
-  line-height:1.55;
-  max-width:920px;
-}
-.card{
-  background:#1d1f23;
-  border-radius:22px;
-  padding:28px;
-  box-shadow:0 8px 24px rgba(0,0,0,.16);
-}
-.feature-card{
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
-.app-icon{
-  width:150px;
-  height:150px;
-  border-radius:28px;
-  object-fit:cover;
-  flex:0 0 auto;
-}
-.feature-text{
-  flex:1;
-  min-width:260px;
-}
-.feature-text h3{
-  margin:0 0 14px;
-  font-size:44px;
-}
-.feature-text p{
-  margin:0;
-  color:#d1d6de;
-  font-size:18px;
-  line-height:1.6;
-}
-.platforms{
-  margin-top:22px;
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
-  font-size:17px;
-  font-weight:700;
-}
-.platforms img{
-  height:24px;
-  width:auto;
-}
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
-}
-.project-card img{
-  width:96px;
-  height:96px;
-  border-radius:18px;
-  object-fit:cover;
-  margin-bottom:16px;
-}
-.project-card h3,
-.roadmap-card h3,
-.contact-card h3{
-  margin:0 0 10px;
-  font-size:30px;
-}
-.project-card p,
-.roadmap-card p,
-.contact-card p{
-  margin:0;
-  color:#d1d6de;
-  font-size:18px;
-  line-height:1.6;
-}
-.label{
-  display:inline-block;
-  margin-bottom:12px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.06);
-  color:#dce3ec;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.03em;
-}
-.roadmap-list{
-  margin-top:16px;
-  display:grid;
-  gap:14px;
-}
-.roadmap-item{
-  padding:16px 18px;
-  border-radius:16px;
-  background:rgba(255,255,255,.04);
-  color:#d1d6de;
-  font-size:17px;
-  line-height:1.55;
-}
-.contact-card strong{
-  font-size:24px;
-}
-footer{
-  text-align:center;
-  padding:24px 0 38px;
-  color:#b3bac5;
-}
-@media(max-width:900px){
-  .grid-2{grid-template-columns:1fr}
-}
-@media(max-width:760px){
-  .nav-inner{flex-direction:column;align-items:flex-start}
-  .nav-links{gap:14px}
-  .intro h1{font-size:34px}
-  .intro p{font-size:18px}
-  .section-header h2{font-size:34px}
-  .feature-card{flex-direction:column;align-items:flex-start}
-  .app-icon{width:130px;height:130px}
-  .feature-text h3{font-size:36px}
-  .card{padding:22px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Vision Media Group</title>
+  <meta name="description" content="Unified Vision Media Group is a multi-division company building modern applications, creative media, and data-driven solutions.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2f2f2f;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(20, 22, 26, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d8dde6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .hero {
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 24px 0 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .intro h1 {
+      margin: 0 0 12px;
+      font-size: 46px;
+      line-height: 1.05;
+    }
+    .intro p {
+      max-width: 900px;
+      margin: 0 auto 22px;
+      color: #d1d6de;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button-primary {
+      background: #4ea1ff;
+      color: #06111f;
+    }
+    .button-secondary {
+      background: #1d1f23;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .section {
+      margin-bottom: 66px;
+    }
+    .section-header {
+      margin-bottom: 18px;
+    }
+    .section-header h2 {
+      margin: 0 0 10px;
+      font-size: 42px;
+    }
+    .section-header p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 920px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1d1f23;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+    .division-card h3,
+    .preview-card h3,
+    .about-card h3,
+    .contact-card h3,
+    .bio-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #dce3ec;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .division-card p,
+    .preview-card p,
+    .about-card p,
+    .contact-card p,
+    .bio-card p,
+    .feature-text p {
+      margin: 0;
+      color: #d1d6de;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .feature-card {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .app-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 28px;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+    .feature-text {
+      flex: 1;
+      min-width: 260px;
+    }
+    .feature-text h3 {
+      margin: 0 0 14px;
+      font-size: 44px;
+    }
+    .platforms {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .platforms img {
+      height: 24px;
+      width: auto;
+      display: inline-block;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+    .bio-wrap {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .founder-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 22px;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+    .bio-card .name {
+      font-size: 34px;
+      margin: 0 0 8px;
+    }
+    .bio-card .title {
+      margin: 0 0 16px;
+      color: #9ec6ff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .linkedin {
+      display: inline-block;
+      margin-top: 16px;
+      color: #67b0ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-card strong {
+      font-size: 24px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 0 38px;
+      color: #b3bac5;
+    }
+    @media (max-width: 1050px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links { gap: 14px; }
+      .intro h1 { font-size: 34px; }
+      .intro p { font-size: 18px; }
+      .section-header h2 { font-size: 34px; }
+      .feature-card,
+      .bio-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .app-icon {
+        width: 130px;
+        height: 130px;
+      }
+      .founder-photo {
+        width: 140px;
+        height: 140px;
+      }
+      .feature-text h3 { font-size: 36px; }
+      .grid-4,
+      .grid-2 { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="index.html">Unified Vision Media Group</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="#products">Products</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact">Contact</a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Unified Vision Media Group</a>
+      <div class="nav-links">
+        <a href="#divisions">Divisions</a>
+        <a href="#product">Fundra</a>
+        <a href="#about">About</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container">
+  <div class="container">
 
-  <div class="hero">
-    <img src="UV Apps Banner.png" alt="Unified Vision Apps Banner">
-  </div>
-
-  <div class="intro">
-    <h1>Unified Vision Apps</h1>
-    <p>
-      The application division of Unified Vision Media Group, focused on building modern software products across finance, productivity, and analytics.
-    </p>
-    <div class="cta-row">
-      <a class="button button-primary" href="#products">View Products</a>
-      <a class="button button-secondary" href="#contact">Contact Support</a>
+    <div class="hero">
+      <img src="UVMG Banner.png" alt="Unified Vision Media Group Banner">
     </div>
-  </div>
 
-  <div class="section" id="products">
-    <div class="section-header">
-      <h2>Featured Products</h2>
+    <div class="intro">
+      <h1>Unified Vision Media Group</h1>
       <p>
-        Current and upcoming software products designed to simplify financial management, data workflows, and everyday digital utility.
+        A multi-division company building modern applications, creative media, and data-driven solutions.
       </p>
+      <div class="cta-row">
+        <a class="button button-primary" href="#divisions">Explore Divisions</a>
+        <a class="button button-secondary" href="#contact">Contact Us</a>
+      </div>
     </div>
 
-    <div class="card feature-card">
-      <img src="fundra-icon.png" class="app-icon" alt="Fundra App Icon">
-      <div class="feature-text">
-        <span class="label">Currently in Beta</span>
-        <h3>Fundra</h3>
+    <div class="section" id="about-company">
+      <div class="section-header">
+        <h2>About Unified Vision Media Group</h2>
         <p>
-          Fundra is a modern personal finance platform designed to make budgeting, saving, and tracking money simple and intuitive. The app helps users stay organized, monitor spending habits, and build stronger financial habits with clear insights and smart automation.
+          Unified Vision Media Group is a multi-division company focused on building modern software, creative media, and practical business tools under one unified brand. The company is designed to support digital products, original content, services, and scalable solutions that can grow across multiple industries over time.
         </p>
-        <div class="platforms">
-          <span>Coming to</span>
-          <img src="ios-logo.png" alt="iOS"> <span>iOS</span>
-          <img src="android-logo.png" alt="Android"> <span>Android</span>
-          <img src="apple-logo.png" alt="macOS"> <span>macOS</span>
+      </div>
+    </div>
+
+    <div class="section" id="divisions">
+      <div class="section-header">
+        <h2>Our Divisions</h2>
+        <p>
+          Unified Vision Media Group brings together software, film production, music production, and analytics under one parent company, with each division focused on a distinct area of products, services, and long-term growth.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card division-card">
+          <span class="label">Software Division</span>
+          <h3>Unified Vision Apps</h3>
+          <p>
+            Mobile and desktop applications focused on finance, productivity, and real-world utility. This division develops modern software platforms designed to simplify everyday tasks and improve user workflows.
+          </p>
+        </div>
+
+        <div class="card division-card">
+          <span class="label">Film Production Division</span>
+          <h3>UNI.FX Vision</h3>
+          <p>
+            Film and visual production focused on original content, cinematic storytelling, and professional video services.
+          </p>
+        </div>
+
+        <div class="card division-card">
+          <span class="label">Music Production Division</span>
+          <h3>UNI.FX Studios</h3>
+          <p>
+            Music and audio production delivering original content, recording services, and creative sound design.
+          </p>
+        </div>
+
+        <div class="card division-card">
+          <span class="label">Data Tools & Reporting Division</span>
+          <h3>UNI.FI Analytics</h3>
+          <p>
+            Excel templates, scripts, and analytics tools designed to simplify data compiling, reporting, and dashboard creation for better decision-making.
+          </p>
         </div>
       </div>
     </div>
 
-    </div>
-  </div>
+    <div class="section" id="product">
+      <div class="section-header">
+        <h2>Featured Product</h2>
+        <p>
+          A current product being developed under Unified Vision Apps.
+        </p>
+      </div>
 
-  <div class="section" id="roadmap">
-    <div class="section-header">
-      <h2>Division Roadmap</h2>
-      <p>
-        Unified Vision Apps is being built as a growing software division with room for future products, expanded features, and practical tools across multiple categories.
-      </p>
-    </div>
-
-    <div class="card roadmap-card">
-      <h3>What’s Ahead</h3>
-      <div class="roadmap-list">
-        <div class="roadmap-item">Expand Fundra into a broader financial ecosystem with more advanced automation and real-time features.</div>
-        <div class="roadmap-item">Launch Fundra Pro with premium functionality including Plaid integration and enhanced savings tools.</div>
-        <div class="roadmap-item">Develop Snapolytics into a screenshot-driven analytics platform for reporting, dashboards, and visual data extraction.</div>
-        <div class="roadmap-item">Continue building future software products under Unified Vision Apps focused on productivity, finance, and real-world utility.</div>
+      <div class="card feature-card">
+        <img src="fundra-icon.png" class="app-icon" alt="Fundra App Icon">
+        <div class="feature-text">
+          <span class="label">Currently in Beta</span>
+          <h3>Fundra</h3>
+          <p>
+            Fundra is a modern personal finance platform designed to make budgeting, saving, and tracking money simple and intuitive. The app helps users stay organized, monitor spending habits, and build stronger financial habits with clear insights and smart automation.
+          </p>
+          <div class="platforms">
+            <span>Coming to</span>
+            <img src="ios-logo.png" alt="iOS"><span>iOS</span>
+            <img src="android-logo.png" alt="Android"><span>Android</span>
+            <img src="apple-logo.png" alt="macOS"><span>macOS</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section" id="contact">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <p>
-        For support, product inquiries, or partnerships related to Unified Vision Apps.
-      </p>
+    <div class="section">
+      <div class="section-header">
+        <h2>Creative Previews</h2>
+        <p>
+          Placeholder sections for future original content, services, and portfolio items from our film and music production divisions.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card preview-card">
+          <span class="label">Coming Soon</span>
+          <h3>UNI.FX Vision</h3>
+          <p>
+            Original films, visual projects, and cinematic production work will be showcased here.
+          </p>
+        </div>
+
+        <div class="card preview-card">
+          <span class="label">Coming Soon</span>
+          <h3>UNI.FX Studios</h3>
+          <p>
+            Music releases, audio projects, and studio production work will be featured here.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="card contact-card">
-      <h3>Support</h3>
-      <p><strong>support@unifiedvisionmediagroup.com</strong></p>
+    <div class="section" id="about">
+      <div class="split">
+        <div class="card about-card">
+          <h3>What We Build</h3>
+          <p>
+            Unified Vision Media Group develops digital products, original media, and practical tools that blend modern design with real-world functionality. Each division is built to support growth within its own lane while contributing to a larger company ecosystem.
+          </p>
+        </div>
+
+        <div class="card about-card">
+          <h3>Long-Term Vision</h3>
+          <p>
+            The company is structured to grow across multiple industries over time, creating room for applications, creative production, analytics tools, and future services under a single scalable brand.
+          </p>
+        </div>
+      </div>
     </div>
+
+    <div class="section" id="founder">
+      <div class="section-header">
+        <h2>Founder, CEO & Developer</h2>
+        <p>
+          Leadership and vision behind Unified Vision Media Group.
+        </p>
+      </div>
+
+      <div class="card bio-card">
+        <div class="bio-wrap">
+          <img src="Ralph-Caballero.jpg" class="founder-photo" alt="Ralph A. Caballero">
+          <div>
+            <h3 class="name">Ralph A. Caballero</h3>
+            <p class="title">Founder, CEO & Developer</p>
+            <p>
+              Ralph A. Caballero is the Founder, CEO, and developer behind Unified Vision Media Group. He created the company to unify software, media, and analytics under one scalable brand focused on modern design, practical functionality, and long-term growth.
+            </p>
+            <p style="margin-top:16px;">
+              His work centers on building digital products, original creative projects, and business tools that solve real-world problems while creating a foundation for future expansion across multiple industries.
+            </p>
+            <a class="linkedin" href="https://www.linkedin.com/in/rcaballero8609/" target="_blank">Connect on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>
+          For support, partnerships, or business inquiries.
+        </p>
+      </div>
+
+      <div class="card contact-card">
+        <p><strong>support@unifiedvisionmediagroup.com</strong></p>
+      </div>
+    </div>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Unified Vision Media Group
+    </footer>
+
   </div>
-
-  <footer>
-    © <script>document.write(new Date().getFullYear())</script> Unified Vision Apps
-  </footer>
-
-</div>
 
 </body>
 </html>
