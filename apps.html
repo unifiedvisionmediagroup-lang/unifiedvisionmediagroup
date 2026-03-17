@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Vision Apps</title>
+  <meta name="description" content="Unified Vision Apps is the software division of Unified Vision Media Group, featuring Fundra and upcoming apps including Fundra Pro and Snapolytics.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2f2f2f;
+      color: #fff;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(20, 22, 26, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d8dde6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .hero {
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 24px 0 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .intro h1 {
+      margin: 0 0 12px;
+      font-size: 46px;
+      line-height: 1.05;
+    }
+    .intro p {
+      max-width: 900px;
+      margin: 0 auto 22px;
+      color: #d1d6de;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button-primary {
+      background: #4ea1ff;
+      color: #06111f;
+    }
+    .button-secondary {
+      background: #1d1f23;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .section {
+      margin-bottom: 66px;
+    }
+    .section-header {
+      margin-bottom: 18px;
+    }
+    .section-header h2 {
+      margin: 0 0 10px;
+      font-size: 42px;
+    }
+    .section-header p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 920px;
+    }
+
+    .card {
+      background: #1d1f23;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .app-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 28px;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+    .feature-text {
+      flex: 1;
+      min-width: 260px;
+    }
+    .feature-text h3 {
+      margin: 0 0 14px;
+      font-size: 44px;
+    }
+    .feature-text p,
+    .project-card p,
+    .roadmap-card p,
+    .contact-card p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #dce3ec;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .platforms {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .platforms img {
+      height: 24px;
+      width: auto;
+      display: inline-block;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card img {
+      width: 96px;
+      height: 96px;
+      border-radius: 18px;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+    .project-card h3,
+    .roadmap-card h3,
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    .roadmap-list {
+      margin-top: 16px;
+      display: grid;
+      gap: 14px;
+    }
+    .roadmap-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #d1d6de;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .contact-card strong {
+      font-size: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 38px;
+      color: #b3bac5;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links { gap: 14px; }
+      .intro h1 { font-size: 34px; }
+      .intro p { font-size: 18px; }
+      .section-header h2 { font-size: 34px; }
+      .feature-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .app-icon {
+        width: 130px;
+        height: 130px;
+      }
+      .feature-text h3 { font-size: 36px; }
+      .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Unified Vision Media Group</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="hero">
+      <img src="UV Apps Banner New.png" alt="Unified Vision Apps Banner">
+    </div>
+
+    <div class="intro">
+      <h1>Unified Vision Apps</h1>
+      <p>
+        The software division of Unified Vision Media Group, focused on building modern applications across finance, productivity, and analytics.
+      </p>
+      <div class="cta-row">
+        <a class="button button-primary" href="#products">View Products</a>
+        <a class="button button-secondary" href="#contact">Contact Support</a>
+      </div>
+    </div>
+
+    <div class="section" id="products">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <p>
+          Current and upcoming software products designed to simplify financial management, data workflows, and real-world digital utility.
+        </p>
+      </div>
+
+      <div class="card feature-card">
+        <img src="fundra-icon.png" class="app-icon" alt="Fundra App Icon">
+        <div class="feature-text">
+          <span class="label">Currently in Beta</span>
+          <h3>Fundra</h3>
+          <p>
+            Fundra is a modern personal finance platform designed to make budgeting, saving, and tracking money simple and intuitive. The app helps users stay organized, monitor spending habits, and build stronger financial habits with clear insights and smart automation.
+          </p>
+          <div class="platforms">
+            <span>Coming to</span>
+            <img src="ios-logo.png" alt="iOS"><span>iOS</span>
+            <img src="android-logo.png" alt="Android"><span>Android</span>
+            <img src="apple-logo.png" alt="macOS"><span>macOS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:20px;">
+        <div class="card project-card">
+          <span class="label">Coming Soon</span>
+          <img src="fundra-pro-icon.png" alt="Fundra Pro Icon">
+          <h3>Fundra Pro</h3>
+          <p>
+            Fundra Pro will extend the Fundra platform with Plaid integration, allowing users to securely link their bank accounts and track savings goals in real time.
+          </p>
+          <p style="margin-top:16px;">
+            Future plans also include collaborative savings features where friends or family can work together toward a shared financial goal.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <span class="label">Coming Soon</span>
+          <img src="Snapolytics-icon.png" alt="Snapolytics Icon">
+          <h3>Snapolytics</h3>
+          <p>
+            Snapolytics is an analytics tool designed to take screenshots and automatically extract useful data. The app will convert visual information into structured reports and dashboards using intelligent data logic.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="roadmap">
+      <div class="section-header">
+        <h2>Division Roadmap</h2>
+        <p>
+          Unified Vision Apps is being built as a growing software division with room for future products, expanded features, and practical tools across multiple categories.
+        </p>
+      </div>
+
+      <div class="card roadmap-card">
+        <h3>What’s Ahead</h3>
+        <div class="roadmap-list">
+          <div class="roadmap-item">Expand Fundra into a broader financial ecosystem with more advanced automation and real-time features.</div>
+          <div class="roadmap-item">Launch Fundra Pro with premium functionality including Plaid integration and enhanced savings tools.</div>
+          <div class="roadmap-item">Develop Snapolytics into a screenshot-driven analytics platform for reporting, dashboards, and visual data extraction.</div>
+          <div class="roadmap-item">Continue building future software products under Unified Vision Apps focused on productivity, finance, and real-world utility.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>
+          For support, product inquiries, or partnerships related to Unified Vision Apps.
+        </p>
+      </div>
+
+      <div class="card contact-card">
+        <h3>Support</h3>
+        <p><strong>support@unifiedvisionmediagroup.com</strong></p>
+      </div>
+    </div>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Unified Vision Apps
+    </footer>
+
+  </div>
+
+</body>
+</html>
