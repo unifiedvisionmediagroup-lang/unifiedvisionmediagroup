@@ -155,6 +155,28 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
     }
 
+    .division-card,
+    .division-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .division-link .card {
+      height: 100%;
+      border: 1px solid transparent;
+    }
+
+    .division-link:hover {
+      transform: translateY(-4px);
+    }
+
+    .division-link:hover .card {
+      border-color: rgba(78, 161, 255, 0.38);
+      box-shadow: 0 10px 28px rgba(78, 161, 255, 0.12);
+    }
+
     .division-card h3,
     .preview-card h3,
     .about-card h3,
@@ -353,6 +375,7 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="apps.html">Apps</a>
+        <a href="studios.html">Studios</a>
         <a href="#divisions">Divisions</a>
         <a href="#about">About</a>
         <a href="#founder">Founder</a>
@@ -396,53 +419,65 @@
       </div>
 
       <div class="grid-3">
-        <div class="card division-card">
-          <span class="label">Software Division</span>
-          <h3>Unified Vision Apps</h3>
-          <p>
-            Mobile and desktop applications focused on finance, productivity, and real-world utility. This division develops modern software platforms designed to simplify workflows and support future digital products.
-          </p>
-        </div>
+        <a class="division-link" href="apps.html">
+          <div class="card division-card">
+            <span class="label">Software Division</span>
+            <h3>Unified Vision Apps</h3>
+            <p>
+              Mobile and desktop applications focused on finance, productivity, and real-world utility. This division develops modern software platforms designed to simplify workflows and support future digital products.
+            </p>
+          </div>
+        </a>
 
-        <div class="card division-card">
-          <span class="label">Film Production Division</span>
-          <h3>UNI FX Vision</h3>
-          <p>
-            Film and visual production focused on original content, cinematic storytelling, and professional video services.
-          </p>
-        </div>
+        <a class="division-link" href="vision.html">
+          <div class="card division-card">
+            <span class="label">Film Production Division</span>
+            <h3>UNI FX Vision</h3>
+            <p>
+              Film and visual production focused on original content, cinematic storytelling, and professional video services.
+            </p>
+          </div>
+        </a>
 
-        <div class="card division-card">
-          <span class="label">Music Production Division</span>
-          <h3>UNI FX Studios</h3>
-          <p>
-            Music and audio production delivering original content, recording services, mixing, and creative sound design.
-          </p>
-        </div>
+        <a class="division-link" href="studios.html">
+          <div class="card division-card">
+            <span class="label">Music Production Division</span>
+            <h3>UNI FX Studios</h3>
+            <p>
+              Music and audio production delivering original content, recording services, mixing, and creative sound design.
+            </p>
+          </div>
+        </a>
 
-        <div class="card division-card">
-          <span class="label">Publishing Division</span>
-          <h3>UNI FI Publishing</h3>
-          <p>
-            A publishing venture focused on ownership, rights management, and long-term development of written, musical, and digital intellectual property.
-          </p>
-        </div>
+        <a class="division-link" href="publishing.html">
+          <div class="card division-card">
+            <span class="label">Publishing Division</span>
+            <h3>UNI FI Publishing</h3>
+            <p>
+              A publishing venture focused on ownership, rights management, and long-term development of written, musical, and digital intellectual property.
+            </p>
+          </div>
+        </a>
 
-        <div class="card division-card">
-          <span class="label">Independent Record Label</span>
-          <h3>UNI FX IS THE MUSIC</h3>
-          <p>
-            An indie record label focused on artist development, original releases, music branding, and distribution of sound recordings.
-          </p>
-        </div>
+        <a class="division-link" href="label.html">
+          <div class="card division-card">
+            <span class="label">Independent Record Label</span>
+            <h3>UNI FX IS THE MUSIC</h3>
+            <p>
+              An indie record label focused on artist development, original releases, music branding, and distribution of sound recordings.
+            </p>
+          </div>
+        </a>
 
-        <div class="card division-card">
-          <span class="label">Current Product Highlight</span>
-          <h3>Fundra</h3>
-          <p>
-            A modern personal finance platform currently in beta, designed to simplify budgeting, saving, and financial tracking across future iOS, Android, and macOS releases.
-          </p>
-        </div>
+        <a class="division-link" href="apps.html">
+          <div class="card division-card">
+            <span class="label">Current Product Highlight</span>
+            <h3>Fundra</h3>
+            <p>
+              A modern personal finance platform currently in beta, designed to simplify budgeting, saving, and financial tracking across future iOS, Android, and macOS releases.
+            </p>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -482,10 +517,10 @@
         </div>
 
         <div class="card preview-card">
-          <span class="label">Coming Soon</span>
+          <span class="label">Now Live</span>
           <h3>UNI FX Studios</h3>
           <p>
-            Music releases, audio projects, and studio production work will be featured here.
+            Music releases, audio projects, studio services, and production packages are available through the UNI FX Studios page.
           </p>
         </div>
 
