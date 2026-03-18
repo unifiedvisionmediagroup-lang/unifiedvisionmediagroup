@@ -154,12 +154,6 @@
       letter-spacing: 0.03em;
     }
 
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -172,7 +166,6 @@
       gap: 20px;
     }
 
-    .service-card img,
     .package-card img,
     .membership-card img {
       width: 100%;
@@ -183,7 +176,6 @@
       border-radius: 18px;
     }
 
-    .service-card h3,
     .package-card h3,
     .pricing-card h3,
     .membership-card h3,
@@ -193,7 +185,6 @@
       font-size: 28px;
     }
 
-    .service-card p,
     .package-card p,
     .pricing-card p,
     .membership-card p,
@@ -243,35 +234,80 @@
 
     .pricing-list {
       display: grid;
-      gap: 14px;
+      gap: 16px;
       margin-top: 16px;
     }
 
     .pricing-item {
-      padding: 16px 18px;
-      border-radius: 16px;
+      padding: 18px;
+      border-radius: 18px;
       background: rgba(255, 255, 255, 0.04);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 18px;
+      align-items: center;
     }
 
-    .pricing-item strong {
+    .pricing-thumb {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      padding: 6px;
+    }
+
+    .pricing-copy strong {
       display: block;
       font-size: 18px;
+      margin-bottom: 4px;
     }
 
-    .pricing-item span {
+    .pricing-copy span {
       color: #d1d6de;
       line-height: 1.5;
+      display: block;
     }
 
     .pricing-item .amount {
       white-space: nowrap;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       color: #ffffff;
+    }
+
+    .membership-highlight {
+      border: 1px solid rgba(78, 161, 255, 0.45);
+      box-shadow: 0 8px 24px rgba(78, 161, 255, 0.12);
+    }
+
+    .membership-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .membership-value {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .membership-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #d1d6de;
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    .membership-item strong {
+      display: block;
+      color: #ffffff;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     .email-link {
@@ -293,9 +329,9 @@
     }
 
     @media (max-width: 1050px) {
-      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3 { grid-template-columns: 1fr; }
       .grid-2 { grid-template-columns: 1fr; }
+      .membership-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -321,7 +357,13 @@
       }
 
       .pricing-item {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .pricing-thumb {
+        width: 110px;
+        height: 110px;
       }
 
       .card {
@@ -337,7 +379,7 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="apps.html">Apps</a>
-        <a href="#services">Services</a>
+        <a href="studios.html">Studios</a>
         <a href="#pricing">Pricing</a>
         <a href="#packages">Packages</a>
         <a href="#contact">Contact</a>
@@ -387,53 +429,6 @@
       </div>
     </div>
 
-    <div class="section" id="services">
-      <div class="section-header">
-        <h2>Services</h2>
-        <p>
-          Professional services built around studio sessions, vocal production, and final release preparation.
-        </p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card service-card">
-          <img src="Recording Studio Ex.png" alt="Recording Studio Service">
-          <span class="label">Recording</span>
-          <h3>Studio Recording</h3>
-          <p>
-            Professional vocal tracking in a focused studio environment designed for artists who want clean takes, quality monitoring, and an efficient recording workflow.
-          </p>
-        </div>
-
-        <div class="card service-card">
-          <img src="Mixing Service.png" alt="Mixing Service">
-          <span class="label">Mixing</span>
-          <h3>Mixing</h3>
-          <p>
-            Stereo and advanced mixing services designed to bring clarity, balance, punch, and depth to your records using professional tools and vocal enhancement workflows.
-          </p>
-        </div>
-
-        <div class="card service-card">
-          <img src="Mastering Service.png" alt="Mastering Service">
-          <span class="label">Mastering</span>
-          <h3>Mastering</h3>
-          <p>
-            Final polish using iZotope Ozone and other mastering tools to optimize loudness, clarity, tonal balance, and release readiness for streaming platforms.
-          </p>
-        </div>
-
-        <div class="card service-card">
-          <img src="Studio Time Service.png" alt="Studio Time Service">
-          <span class="label">Session Time</span>
-          <h3>Studio Time</h3>
-          <p>
-            Book dedicated studio time for recording sessions, focused creative work, and artist-driven projects with flexible session extensions available.
-          </p>
-        </div>
-      </div>
-    </div>
-
     <div class="section" id="pricing">
       <div class="section-header">
         <h2>Individual Service Pricing</h2>
@@ -446,73 +441,82 @@
         <h3>Studio Rates & Services</h3>
         <div class="pricing-list">
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Studio Time Service.png" alt="Studio Time Service">
+            <div class="pricing-copy">
               <strong>Studio Time</strong>
-              <span>2 hour minimum session block</span>
+              <span>2 hour minimum session block for recording sessions, focused creative work, and artist-driven projects.</span>
             </div>
             <div class="amount">$150</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Recording Studio Ex.png" alt="Recording Studio Service">
+            <div class="pricing-copy">
               <strong>Single Session Bundle</strong>
-              <span>3 hours included with basic mix</span>
+              <span>3 hours included with a basic mix. Ideal for artists needing a focused single-song session.</span>
             </div>
             <div class="amount">$215</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Mixing Service.png" alt="Mixing Service">
+            <div class="pricing-copy">
               <strong>Stereo Mix</strong>
-              <span>Starting price per song</span>
+              <span>Starting price per song for professional stereo mixing with clarity, balance, punch, and depth.</span>
             </div>
             <div class="amount">$125+</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Mixing Service.png" alt="Complex Mixing Service">
+            <div class="pricing-copy">
               <strong>Complex Mix</strong>
-              <span>Starting price per song</span>
+              <span>Starting price per song for more advanced sessions, layered production, and detailed workflow needs.</span>
             </div>
             <div class="amount">$175+</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Mastering Service.png" alt="Mastering Service">
+            <div class="pricing-copy">
               <strong>Stereo Master</strong>
-              <span>Final stereo mastering per song</span>
+              <span>Final stereo mastering per song using iZotope Ozone and other mastering tools for release-ready polish.</span>
             </div>
             <div class="amount">$65</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Mastering Service.png" alt="Stem Mastering Service">
+            <div class="pricing-copy">
               <strong>Stem Mastering</strong>
-              <span>Advanced stem-based mastering per song</span>
+              <span>Advanced stem-based mastering per song for greater control and more detailed final enhancement.</span>
             </div>
             <div class="amount">$90</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Studio Time Service.png" alt="Additional Studio Time">
+            <div class="pricing-copy">
               <strong>Extra Hour (after minimum)</strong>
-              <span>Extend your session beyond the minimum block</span>
+              <span>Extend your session beyond the minimum booking block at a discounted continuing rate.</span>
             </div>
             <div class="amount">$70</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Mastering Service.png" alt="Additional Master">
+            <div class="pricing-copy">
               <strong>Additional Master</strong>
-              <span>Additional mastered version or track</span>
+              <span>Additional mastered version or extra mastered track as needed for your project.</span>
             </div>
             <div class="amount">$65</div>
           </div>
 
           <div class="pricing-item">
-            <div>
+            <img class="pricing-thumb" src="Recording Studio Ex.png" alt="Vocal Tuning Service">
+            <div class="pricing-copy">
               <strong>Vocal Tuning (standalone)</strong>
-              <span>Auto-Tune / Melodyne based correction and cleanup</span>
+              <span>Auto-Tune / Melodyne based vocal correction, cleanup, and pitch refinement.</span>
             </div>
             <div class="amount">$40</div>
           </div>
@@ -585,18 +589,57 @@
         </p>
       </div>
 
-      <div class="card membership-card">
-        <img src="Muzical-Master-Mindzv2.png" alt="Muzical Master Mindz Membership">
-        <span class="label">Membership</span>
-        <h3>Muzical Master Mindz</h3>
-        <div class="price">$49/month</div>
-        <ul class="list">
-          <li>Discounted studio time</li>
-          <li>Discounted mixing and mastering</li>
-          <li>Priority booking access</li>
-          <li>Member-only session deals</li>
-          <li>Early access to future services and promotions</li>
-        </ul>
+      <div class="card membership-card membership-highlight">
+        <div class="membership-grid">
+          <div>
+            <img src="Muzical-Master-Mindzv2.png" alt="Muzical Master Mindz Membership">
+            <span class="label">Artist Membership</span>
+            <h3>Muzical Master Mindz</h3>
+            <div class="price">$149/month</div>
+            <p>
+              A premium membership for serious artists who want regular studio access, priority scheduling, and member-only value every month.
+            </p>
+          </div>
+
+          <div>
+            <div class="membership-value">
+              <div class="membership-item">
+                <strong>3 Hours Included Monthly</strong>
+                Each month includes 3 studio hours that can be used like regular session time.
+              </div>
+
+              <div class="membership-item">
+                <strong>1-Month Rollover</strong>
+                Unused hours roll over to the next month only, with a maximum carryover of 3 hours. Hours expire after that, so they cannot be stacked indefinitely.
+              </div>
+
+              <div class="membership-item">
+                <strong>Discounted Additional Studio Time</strong>
+                Members get extra studio time for $60/hour instead of the standard $70/hour rate.
+              </div>
+
+              <div class="membership-item">
+                <strong>Discounted Mixing & Mastering</strong>
+                Members receive reduced rates on additional services, including discounted mastering and 10–15% off mixing services.
+              </div>
+
+              <div class="membership-item">
+                <strong>Member-Only Booking Days</strong>
+                Access to exclusive booking windows and select member-only studio availability.
+              </div>
+
+              <div class="membership-item">
+                <strong>Priority Scheduling</strong>
+                Members receive booking priority over non-members, making it easier to stay consistent with projects.
+              </div>
+
+              <div class="membership-item">
+                <strong>Exclusive Perks</strong>
+                Access to member-only offers, session specials, occasional free upgrades, and early access to future services and promotions.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
