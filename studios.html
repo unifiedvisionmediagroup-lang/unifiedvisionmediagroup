@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNI FX Studios</title>
+  <meta name="description" content="UNI FX Studios is the audio production division of Unified Vision Media Group, offering recording, mixing, mastering, studio time, and artist-focused packages.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2f2f2f;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(20, 22, 26, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #d8dde6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 24px 0 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .intro h1 {
+      margin: 0 0 12px;
+      font-size: 46px;
+      line-height: 1.05;
+    }
+
+    .intro p {
+      max-width: 940px;
+      margin: 0 auto 22px;
+      color: #d1d6de;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button-primary {
+      background: #4ea1ff;
+      color: #06111f;
+    }
+
+    .button-secondary {
+      background: #1d1f23;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .section {
+      margin-bottom: 66px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 10px;
+      font-size: 42px;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 980px;
+    }
+
+    .card {
+      background: #1d1f23;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #dce3ec;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card img,
+    .package-card img,
+    .membership-card img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+    }
+
+    .service-card h3,
+    .package-card h3,
+    .pricing-card h3,
+    .membership-card h3,
+    .about-card h3,
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .service-card p,
+    .package-card p,
+    .pricing-card p,
+    .membership-card p,
+    .about-card p,
+    .contact-card p,
+    .spec-card p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .price {
+      display: inline-block;
+      margin: 10px 0 14px;
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .featured-package {
+      border: 1px solid rgba(78, 161, 255, 0.5);
+      box-shadow: 0 8px 24px rgba(78, 161, 255, 0.12);
+    }
+
+    .list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: #d1d6de;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .spec-card {
+      background: #17191d;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .spec-card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .pricing-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .pricing-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .pricing-item strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .pricing-item span {
+      color: #d1d6de;
+      line-height: 1.5;
+    }
+
+    .pricing-item .amount {
+      white-space: nowrap;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .email-link {
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.3;
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 800;
+      font-size: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 38px;
+      color: #b3bac5;
+    }
+
+    @media (max-width: 1050px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        justify-content: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+        justify-content: flex-start;
+      }
+
+      .intro h1 {
+        font-size: 34px;
+      }
+
+      .intro p {
+        font-size: 18px;
+      }
+
+      .section-header h2 {
+        font-size: 34px;
+      }
+
+      .pricing-item {
+        flex-direction: column;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="hero">
+      <img src="UNI FX-Studios-Banner-v2.png" alt="UNI FX Studios Banner">
+    </div>
+
+    <div class="intro">
+      <h1>UNI FX Studios</h1>
+      <p>
+        The audio production division of Unified Vision Media Group, focused on professional recording, mixing, mastering, studio time, and artist-centered production services.
+      </p>
+      <div class="cta-row">
+        <a class="button button-primary" href="#packages">View Packages</a>
+        <a class="button button-secondary" href="#contact">Book / Contact</a>
+      </div>
+    </div>
+
+    <div class="section" id="about">
+      <div class="section-header">
+        <h2>About the Studio</h2>
+        <p>
+          UNI FX Studios is built for independent artists, serious creators, and developing talent looking for a professional recording environment with modern tools and a strong creative workflow. The studio supports vocal tracking, mixing, mastering, and artist development with a focus on polished, release-ready sound.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="spec-card">
+          <h4>DAWs & Production Tools</h4>
+          <p>
+            Pro Tools, Reaper, Auto-Tune, Melodyne, Revoice Pro, Vocalign, iZotope Ozone, and a large suite of professional mixing, mastering, and vocal plugins.
+          </p>
+        </div>
+
+        <div class="spec-card">
+          <h4>Studio Gear</h4>
+          <p>
+            WA-87 microphone, Icon Pro Audio P1-M DAW control surface, JBL studio monitors, and a professional workflow built for recording, editing, mixing, and mastering.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="services">
+      <div class="section-header">
+        <h2>Services</h2>
+        <p>
+          Professional services built around studio sessions, vocal production, and final release preparation.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card service-card">
+          <img src="Recording Studio Ex.png" alt="Recording Studio Service">
+          <span class="label">Recording</span>
+          <h3>Studio Recording</h3>
+          <p>
+            Professional vocal tracking in a focused studio environment designed for artists who want clean takes, quality monitoring, and an efficient recording workflow.
+          </p>
+        </div>
+
+        <div class="card service-card">
+          <img src="Mixing Service.png" alt="Mixing Service">
+          <span class="label">Mixing</span>
+          <h3>Mixing</h3>
+          <p>
+            Stereo and advanced mixing services designed to bring clarity, balance, punch, and depth to your records using professional tools and vocal enhancement workflows.
+          </p>
+        </div>
+
+        <div class="card service-card">
+          <img src="Mastering Service.png" alt="Mastering Service">
+          <span class="label">Mastering</span>
+          <h3>Mastering</h3>
+          <p>
+            Final polish using iZotope Ozone and other mastering tools to optimize loudness, clarity, tonal balance, and release readiness for streaming platforms.
+          </p>
+        </div>
+
+        <div class="card service-card">
+          <img src="Studio Time Service.png" alt="Studio Time Service">
+          <span class="label">Session Time</span>
+          <h3>Studio Time</h3>
+          <p>
+            Book dedicated studio time for recording sessions, focused creative work, and artist-driven projects with flexible session extensions available.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="pricing">
+      <div class="section-header">
+        <h2>Individual Service Pricing</h2>
+        <p>
+          Straightforward service pricing for artists who want to build custom sessions or add services individually.
+        </p>
+      </div>
+
+      <div class="card pricing-card">
+        <h3>Studio Rates & Services</h3>
+        <div class="pricing-list">
+          <div class="pricing-item">
+            <div>
+              <strong>Studio Time</strong>
+              <span>2 hour minimum session block</span>
+            </div>
+            <div class="amount">$150</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Single Session Bundle</strong>
+              <span>3 hours included with basic mix</span>
+            </div>
+            <div class="amount">$215</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Stereo Mix</strong>
+              <span>Starting price per song</span>
+            </div>
+            <div class="amount">$125+</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Complex Mix</strong>
+              <span>Starting price per song</span>
+            </div>
+            <div class="amount">$175+</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Stereo Master</strong>
+              <span>Final stereo mastering per song</span>
+            </div>
+            <div class="amount">$65</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Stem Mastering</strong>
+              <span>Advanced stem-based mastering per song</span>
+            </div>
+            <div class="amount">$90</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Extra Hour (after minimum)</strong>
+              <span>Extend your session beyond the minimum block</span>
+            </div>
+            <div class="amount">$70</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Additional Master</strong>
+              <span>Additional mastered version or track</span>
+            </div>
+            <div class="amount">$65</div>
+          </div>
+
+          <div class="pricing-item">
+            <div>
+              <strong>Vocal Tuning (standalone)</strong>
+              <span>Auto-Tune / Melodyne based correction and cleanup</span>
+            </div>
+            <div class="amount">$40</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="packages">
+      <div class="section-header">
+        <h2>Recording Packages</h2>
+        <p>
+          Session packages designed for different artist needs, from focused single-song work to premium studio experiences.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card package-card">
+          <img src="Silver R Package.png" alt="Silver Recording Package">
+          <span class="label">Entry Package</span>
+          <h3>Silver Session Package</h3>
+          <div class="price">$225</div>
+          <ul class="list">
+            <li>2 hours studio time</li>
+            <li>1 song recording session</li>
+            <li>Basic vocal mix</li>
+            <li>1 stereo master</li>
+            <li>1 revision</li>
+          </ul>
+        </div>
+
+        <div class="card package-card featured-package">
+          <img src="Gold R Package.png" alt="Gold Recording Package">
+          <span class="label">Best Value</span>
+          <h3>Gold Artist Package</h3>
+          <div class="price">$425</div>
+          <ul class="list">
+            <li>4 hours studio time</li>
+            <li>Up to 2 songs recorded</li>
+            <li>Full mix on 1 song</li>
+            <li>2 stereo masters</li>
+            <li>Vocal tuning / cleanup</li>
+            <li>2 revisions</li>
+          </ul>
+        </div>
+
+        <div class="card package-card">
+          <img src="Diamond R Package.png" alt="Diamond Recording Package">
+          <span class="label">Premium Package</span>
+          <h3>Diamond Elite Package</h3>
+          <div class="price">$775</div>
+          <ul class="list">
+            <li>8 hours studio time</li>
+            <li>Up to 3 songs recorded</li>
+            <li>Full mixes included</li>
+            <li>Stereo masters included</li>
+            <li>Vocal tuning + editing</li>
+            <li>Production consultation</li>
+            <li>Priority booking</li>
+            <li>3 revisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="membership">
+      <div class="section-header">
+        <h2>Muzical Master Mindz</h2>
+        <p>
+          A creator-focused recording club membership designed for artists who want consistent access, member perks, and long-term studio growth.
+        </p>
+      </div>
+
+      <div class="card membership-card">
+        <img src="Muzical-Master-Mindz.png" alt="Muzical Master Mindz Membership">
+        <span class="label">Membership</span>
+        <h3>Muzical Master Mindz</h3>
+        <div class="price">$49/month</div>
+        <ul class="list">
+          <li>Discounted studio time</li>
+          <li>Discounted mixing and mastering</li>
+          <li>Priority booking access</li>
+          <li>Member-only session deals</li>
+          <li>Early access to future services and promotions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact / Booking</h2>
+        <p>
+          For booking, pricing questions, partnerships, or artist inquiries.
+        </p>
+      </div>
+
+      <div class="card contact-card">
+        <h3>Support</h3>
+        <p><a class="email-link" href="mailto:support@unifiedvisionmediagroup.com">support@unifiedvisionmediagroup.com</a></p>
+      </div>
+    </div>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> UNI FX Studios
+    </footer>
+
+  </div>
+
+</body>
+</html>
