@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNI FX Vision</title>
+  <meta name="description" content="UNI FX Vision is the video production division of Unified Vision Media Group, offering music videos, podcast production, photoshoots, short film production, and special event coverage.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2f2f2f;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(20, 22, 26, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #d8dde6;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 24px 0 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .intro h1 {
+      margin: 0 0 12px;
+      font-size: 46px;
+      line-height: 1.05;
+    }
+
+    .intro p {
+      max-width: 940px;
+      margin: 0 auto 22px;
+      color: #d1d6de;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button-primary {
+      background: #4ea1ff;
+      color: #06111f;
+    }
+
+    .button-secondary {
+      background: #1d1f23;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .section {
+      margin-bottom: 66px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 10px;
+      font-size: 42px;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 980px;
+    }
+
+    .card {
+      background: #1d1f23;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #dce3ec;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .spec-card {
+      background: #17191d;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .spec-card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .spec-card p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .pricing-card h3,
+    .package-card h3,
+    .contact-card h3,
+    .about-card h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .pricing-card p,
+    .package-card p,
+    .contact-card p,
+    .about-card p {
+      margin: 0;
+      color: #d1d6de;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .pricing-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .pricing-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .pricing-thumb {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      padding: 6px;
+    }
+
+    .pricing-copy strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .pricing-copy span {
+      color: #d1d6de;
+      line-height: 1.5;
+      display: block;
+    }
+
+    .pricing-item .amount {
+      white-space: nowrap;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .package-card img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+    }
+
+    .price {
+      display: inline-block;
+      margin: 10px 0 14px;
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .featured-package {
+      border: 1px solid rgba(78, 161, 255, 0.5);
+      box-shadow: 0 8px 24px rgba(78, 161, 255, 0.12);
+    }
+
+    .list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: #d1d6de;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .email-link {
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.3;
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 800;
+      font-size: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 38px;
+      color: #b3bac5;
+    }
+
+    @media (max-width: 1050px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        justify-content: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+        justify-content: flex-start;
+      }
+
+      .intro h1 {
+        font-size: 34px;
+      }
+
+      .intro p {
+        font-size: 18px;
+      }
+
+      .section-header h2 {
+        font-size: 34px;
+      }
+
+      .pricing-item {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .pricing-thumb {
+        width: 110px;
+        height: 110px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="studios.html">Studios</a>
+        <a href="vision.html">Vision</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="hero">
+      <img src="UNI FX-Studios-Banner-v2.png" alt="UNI FX Vision Banner">
+    </div>
+
+    <div class="intro">
+      <h1>UNI FX Vision</h1>
+      <p>
+        The video production division of Unified Vision Media Group, focused on music videos, podcast production, photoshoots, short film production, and special event coverage.
+      </p>
+      <div class="cta-row">
+        <a class="button button-primary" href="#packages">View Packages</a>
+        <a class="button button-secondary" href="#contact">Book / Contact</a>
+      </div>
+    </div>
+
+    <div class="section" id="about">
+      <div class="section-header">
+        <h2>About the Division</h2>
+        <p>
+          UNI FX Vision is built for artists, creators, brands, and clients who want clean, professional visuals backed by strong production value. The division is designed to support music-driven visuals, single-camera podcast production, photography sessions, short film projects, and memorable event coverage with a polished creative approach.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="spec-card">
+          <h4>Production Tools</h4>
+          <p>
+            Sony A6700, DaVinci Resolve, Final Cut Pro, Meld Studio, professional lighting, green screen capability, and a growing production workflow built for both recorded and live content.
+          </p>
+        </div>
+
+        <div class="spec-card">
+          <h4>Creative Direction</h4>
+          <p>
+            UNI FX Vision focuses on strong visuals, clean editing, basic color correction, lighting control, and creative execution that helps independent artists and clients present themselves professionally.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="pricing">
+      <div class="section-header">
+        <h2>Service Pricing</h2>
+        <p>
+          Focused service pricing for core visual production work. Basic color correction is included where applicable for clean, natural visuals.
+        </p>
+      </div>
+
+      <div class="card pricing-card">
+        <h3>Video & Photo Services</h3>
+        <div class="pricing-list">
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Music Video Service.png" alt="Music Video Service">
+            <div class="pricing-copy">
+              <strong>Music Video Production</strong>
+              <span>Performance-driven music video shoots with clean editing, lighting setup, and basic color correction for artists building visual presence.</span>
+            </div>
+            <div class="amount">$400+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Podcast Production Service.png" alt="Podcast Production Service">
+            <div class="pricing-copy">
+              <strong>Podcast Production</strong>
+              <span>Single-camera podcast production with professional lighting, clean audio workflow, and edited episode delivery.</span>
+            </div>
+            <div class="amount">$150+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Photoshoot Service.png" alt="Photoshoot Service">
+            <div class="pricing-copy">
+              <strong>Photoshoots</strong>
+              <span>Portrait, artist, branding, and lifestyle photoshoots designed for promotional use, social media, and clean professional presentation.</span>
+            </div>
+            <div class="amount">$100+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Short Film Production Service.png" alt="Short Film Production Service">
+            <div class="pricing-copy">
+              <strong>Indie Short Film Production</strong>
+              <span>Short-form narrative production for independent creators, concept pieces, and small cinematic projects.</span>
+            </div>
+            <div class="amount">$800+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Special Events.png" alt="Special Events Service">
+            <div class="pricing-copy">
+              <strong>Special Event Coverage</strong>
+              <span>Coverage for weddings, birthdays, baby showers, celebrations, and milestone events with highlight-focused delivery.</span>
+            </div>
+            <div class="amount">$250+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Video Editing Service.png" alt="Video Editing Service">
+            <div class="pricing-copy">
+              <strong>Video Editing</strong>
+              <span>Standalone editing for client-provided footage, including pacing, cuts, cleanup, and basic visual polish.</span>
+            </div>
+            <div class="amount">$125+</div>
+          </div>
+
+          <div class="pricing-item">
+            <img class="pricing-thumb" src="Video Production Service.png" alt="Video Production Service">
+            <div class="pricing-copy">
+              <strong>Creative Production Add-On</strong>
+              <span>Lighting, green screen setup, and more involved creative production can be added depending on project scope.</span>
+            </div>
+            <div class="amount">Quote</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="packages">
+      <div class="section-header">
+        <h2>Featured Packages</h2>
+        <p>
+          Flat-rate packages designed to give clients a clear starting point while keeping room for custom projects and add-ons.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card package-card">
+          <img src="Music Video Service.png" alt="Music Video Package">
+          <span class="label">Artist Package</span>
+          <h3>Music Video Starter</h3>
+          <div class="price">$400</div>
+          <ul class="list">
+            <li>Up to 2 hours shoot time</li>
+            <li>1 setup or location</li>
+            <li>Basic edit included</li>
+            <li>Basic color correction</li>
+            <li>1 revision</li>
+          </ul>
+        </div>
+
+        <div class="card package-card featured-package">
+          <img src="Podcast Production Service.png" alt="Podcast Package">
+          <span class="label">Best Value</span>
+          <h3>Podcast Standard</h3>
+          <div class="price">$275</div>
+          <ul class="list">
+            <li>1–2 hour single-camera session</li>
+            <li>Professional lighting setup</li>
+            <li>Clean audio workflow</li>
+            <li>Edited full episode</li>
+            <li>1 revision</li>
+          </ul>
+        </div>
+
+        <div class="card package-card">
+          <img src="Special Events.png" alt="Special Events Package">
+          <span class="label">Event Package</span>
+          <h3>Event Highlight Coverage</h3>
+          <div class="price">$500</div>
+          <ul class="list">
+            <li>Up to 4 hours event coverage</li>
+            <li>Highlight-focused video edit</li>
+            <li>Basic color correction</li>
+            <li>Ideal for weddings, birthdays, and showers</li>
+            <li>1 revision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="services-overview">
+      <div class="section-header">
+        <h2>Current Focus</h2>
+        <p>
+          UNI FX Vision currently focuses on a tight service lineup that can be delivered well, priced honestly, and scaled over time as production capabilities expand.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card about-card">
+          <h3>What We’re Offering Now</h3>
+          <p>
+            Music videos, podcast production, photoshoots, short film projects, special event coverage, and standalone video editing services form the current foundation of the division.
+          </p>
+        </div>
+
+        <div class="card about-card">
+          <h3>What’s Expanding Next</h3>
+          <p>
+            Additional creative production services, more advanced visual workflows, and expanded camera capabilities will continue to grow the division over time.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact / Booking</h2>
+        <p>
+          For music video shoots, podcast production, photoshoots, short film projects, event coverage, or custom creative work.
+        </p>
+      </div>
+
+      <div class="card contact-card">
+        <h3>Support</h3>
+        <p><a class="email-link" href="mailto:support@unifiedvisionmediagroup.com">support@unifiedvisionmediagroup.com</a></p>
+      </div>
+    </div>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> UNI FX Vision
+    </footer>
+
+  </div>
+
+</body>
+</html>
