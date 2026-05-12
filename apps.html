@@ -206,6 +206,22 @@
       display: inline-block;
     }
 
+    .app-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .status-note {
+      margin-top: 16px;
+      color: #9ec6ff;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -310,17 +326,18 @@
 <body>
 
   <nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="apps.html">Apps</a>
-      <a href="studios.html">Studios</a>
-      <a href="vision.html">Vision</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="studios.html">Studios</a>
+        <a href="vision.html">Vision</a>
+        <a href="https://fundra.unifiedvisionmediagroup.com/" target="_blank" rel="noopener">Fundra</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <div class="container">
 
@@ -335,7 +352,7 @@
       </p>
       <div class="cta-row">
         <a class="button button-primary" href="#products">View Products</a>
-        <a class="button button-secondary" href="#contact">Contact Support</a>
+        <a class="button button-secondary" href="https://fundra.unifiedvisionmediagroup.com/" target="_blank" rel="noopener">Launch Fundra</a>
       </div>
     </div>
 
@@ -355,11 +372,21 @@
           <p>
             Fundra is a modern personal finance platform designed to make budgeting, saving, and tracking money simple and intuitive. The app helps users stay organized, monitor spending habits, and build stronger financial habits with clear insights and smart automation.
           </p>
+
+          <p class="status-note">
+            Fundra is currently available as a web app for beta access. Native iOS, Android, and macOS releases are planned for future availability.
+          </p>
+
           <div class="platforms">
             <span>Coming to</span>
             <img src="ios-logo.png" alt="iOS"><span>iOS</span>
             <img src="android-logo.png" alt="Android"><span>Android</span>
             <img src="apple-logo.png" alt="macOS"><span>macOS</span>
+          </div>
+
+          <div class="app-actions">
+            <a class="button button-primary" href="https://fundra.unifiedvisionmediagroup.com/" target="_blank" rel="noopener">Launch Fundra Web App</a>
+            <a class="button button-secondary" href="#contact">Contact Support</a>
           </div>
         </div>
       </div>
@@ -400,7 +427,7 @@
         <div class="card about-card">
           <h3>Current Focus</h3>
           <p>
-            The division is currently focused on financial tools, productivity-driven solutions, and future software that can scale across mobile and desktop platforms.
+            The division is currently focused on financial tools, productivity-driven solutions, and future software that can scale across web, mobile, and desktop platforms.
           </p>
         </div>
 
@@ -424,6 +451,7 @@
       <div class="card roadmap-card">
         <h3>What’s Ahead</h3>
         <div class="roadmap-list">
+          <div class="roadmap-item">Continue beta testing and improving the Fundra web app.</div>
           <div class="roadmap-item">Expand Fundra into a broader financial ecosystem with more advanced automation and real-time features.</div>
           <div class="roadmap-item">Launch Fundra Pro with premium functionality including Plaid integration and enhanced savings tools.</div>
           <div class="roadmap-item">Develop Snapolytics into a screenshot-driven analytics platform for reporting, dashboards, and visual data extraction.</div>
@@ -432,28 +460,39 @@
       </div>
     </div>
 
-   <div class="card contact-card">
-  <p style="margin-bottom:14px;">
-    <strong>Support</strong><br>
-    <a class="email-link" href="mailto:support@unifiedvisionmediagroup.com">
-      support@unifiedvisionmediagroup.com
-    </a>
-  </p>
+    <div class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>
+          For app support, product inquiries, or partnerships related to Unified Vision Apps.
+        </p>
+      </div>
 
-  <p>
-    <strong>Phone</strong><br>
-    <a class="email-link" href="tel:+14077340139">
-      (407) 734-0139
-    </a>
-    <span style="display:block; margin-top:6px; color:#9ec6ff;">
-      
-    </span>
-  </p>
-</div>
+      <div class="card contact-card">
+        <p style="margin-bottom:14px;">
+          <strong>Support</strong><br>
+          <a class="email-link" href="mailto:support@unifiedvisionmediagroup.com">
+            support@unifiedvisionmediagroup.com
+          </a>
+        </p>
 
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> Unified Vision Apps
-</footer>
-    
+        <p>
+          <strong>Phone</strong><br>
+          <a class="email-link" href="tel:+14077340139">
+            (407) 734-0139
+          </a>
+          <span style="display:block; margin-top:6px; color:#9ec6ff;">
+            Call or text for support and app inquiries
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Unified Vision Media Group
+    </footer>
+
+  </div>
+
 </body>
 </html>
